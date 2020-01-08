@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import PicData from "./PicData"
 import { Container, Row } from "reactstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -37,29 +36,28 @@ function Pic() {
             });
         fetchImg()
         }, [day, month, year])
-        
+        console.log(img)
     
 
     return (
         <Container>
-             <p>
-                 Date:
-                < DatePicker 
-                selected = {newDate}
-                onChange = {onChange}
-                value = {newDate}
-                format = 'yyyy-MM-dd'
-                maxDate = {new Date()}/>
-            </p>
-            
-            <Row>
-                {title}         
-            </Row>
-            <Row>
-                {date}
-            </Row>
+               <Row>
+                    <p>Title: {title}</p>    
+               </Row>
+               <Row> 
+                    <p>
+                        Date: {} 
+                        < DatePicker 
+                        selected = {newDate}
+                        onChange = {onChange}
+                        value = {newDate}
+                        format = 'yyyy-MM-dd'
+                        maxDate = {new Date()}/>
+                    </p>                 
+                </Row>         
             <img src = {img} alt = ""/>
             <div>
+                <h3>About this Photo</h3>
                 <p>{about}</p>
             </div>
 
