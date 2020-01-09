@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
 import Pic from './Components/Pic'
+import {Alert} from 'reactstrap';
 
 function App() {
   return (
     <div className="App">
 
-      <h1>NASA PHOTO OF THE DAY!!!</h1> 
+      <Alert>NASA PHOTO OF THE DAY!!!</Alert> 
       <Pic/>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import { Container, Row } from "reactstrap";
+import { Container, Row, Card, CardBody, Button, CardTitle, CardText, CardImg } from "reactstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -41,9 +41,9 @@ function Pic() {
 
     return (
         <Container>
-               <Row>
+               {/* <Row>
                     <p>Title: {title}</p>    
-               </Row>
+               </Row> */}
                <Row> 
                     <p>
                         Date: {} 
@@ -55,11 +55,21 @@ function Pic() {
                         maxDate = {new Date()}/>
                     </p>                 
                 </Row>         
-            <img src = {img} alt = ""/>
-            <div>
+            {/* <img src = {img} alt = ""/> */}
+            {/* <div>
                 <h3>About this Photo</h3>
                 <p>{about}</p>
-            </div>
+            </div> */}
+
+            <Card>
+                <CardImg top width="70%" src={img} alt = "" />
+                <CardBody>
+                    <CardTitle>{title}</CardTitle>
+                    <CardText>{about}</CardText>
+                </CardBody>
+            </Card>
+
+
 
         </Container>
     );
@@ -68,3 +78,5 @@ function Pic() {
 }
 console.log(Pic);
 export default Pic;
+
+
